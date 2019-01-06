@@ -67,6 +67,8 @@
             this.pictureBoxEvent = new System.Windows.Forms.PictureBox();
             this.pictureBoxPage = new System.Windows.Forms.PictureBox();
             this.checkinBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnUsage = new System.Windows.Forms.Button();
+            this.timerUsage = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -348,17 +350,17 @@
             this.panelData.Controls.Add(this.labelFriendsNum);
             this.panelData.Controls.Add(this.labelFriendsStatus);
             this.panelData.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelData.Location = new System.Drawing.Point(0, 1285);
+            this.panelData.Location = new System.Drawing.Point(0, 1268);
             this.panelData.Margin = new System.Windows.Forms.Padding(4);
             this.panelData.Name = "panelData";
-            this.panelData.Size = new System.Drawing.Size(1147, 44);
+            this.panelData.Size = new System.Drawing.Size(1181, 44);
             this.panelData.TabIndex = 94;
             // 
             // panelActive
             // 
             this.panelActive.BackColor = System.Drawing.Color.Red;
             this.panelActive.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelActive.Location = new System.Drawing.Point(1102, 0);
+            this.panelActive.Location = new System.Drawing.Point(1136, 0);
             this.panelActive.Margin = new System.Windows.Forms.Padding(4);
             this.panelActive.Name = "panelActive";
             this.panelActive.Size = new System.Drawing.Size(45, 44);
@@ -486,7 +488,7 @@
             this.pictureBoxCoverPic.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxCoverPic.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxCoverPic.Name = "pictureBoxCoverPic";
-            this.pictureBoxCoverPic.Size = new System.Drawing.Size(1147, 242);
+            this.pictureBoxCoverPic.Size = new System.Drawing.Size(1181, 242);
             this.pictureBoxCoverPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCoverPic.TabIndex = 96;
             this.pictureBoxCoverPic.TabStop = false;
@@ -515,12 +517,26 @@
             // 
             this.checkinBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.Checkin);
             // 
+            // btnUsage
+            // 
+            this.btnUsage.Location = new System.Drawing.Point(271, 446);
+            this.btnUsage.Name = "btnUsage";
+            this.btnUsage.Size = new System.Drawing.Size(134, 60);
+            this.btnUsage.TabIndex = 99;
+            this.btnUsage.Text = "Usage";
+            this.btnUsage.UseVisualStyleBackColor = true;
+            // 
+            // timerUsage
+            // 
+            this.timerUsage.Interval = 5000;
+            this.timerUsage.Tick += new System.EventHandler(this.timerUsage_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1181, 1312);
+            this.Controls.Add(this.btnUsage);
             this.Controls.Add(this.pictureBoxPage);
             this.Controls.Add(this.pictureBoxEvent);
             this.Controls.Add(this.panelData);
@@ -606,5 +622,7 @@
         private System.Windows.Forms.BindingSource userBindingSource;
         private System.Windows.Forms.BindingSource checkinBindingSource;
         private System.Windows.Forms.BindingSource eventBindingSource;
+        private System.Windows.Forms.Button btnUsage;
+        private System.Windows.Forms.Timer timerUsage;
     }
 } 

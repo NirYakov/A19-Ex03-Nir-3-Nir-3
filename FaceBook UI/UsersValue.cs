@@ -77,6 +77,7 @@ by given fields , and sort the best to top.";
 
             PictureTopBar ptb = newPictureTopBar(UserManager.UserName, UserManager.UserPictureUrl);
             ptb.AddToClickEvent(pictureTopBar_Click);
+            ptb.MyUserAnalysis.UserIn = UserManager.User;
             r_PictureTopBars.Add(ptb);
             flowLayoutPanelFriends.Controls.Add(ptb);
         }
@@ -171,15 +172,12 @@ by given fields , and sort the best to top.";
             {
                 if (m_LoadedUserAnalysis.UserIn != null)
                 {
-                    const bool pictureInteraction = true;
-
                     labelNameInteraction.Invoke(new Action(() =>
                     labelNameInteraction.Text = m_LoadedUserAnalysis.UserIn.Name));
 
                     this.Invoke(new Action(() => calculateAndFillDataUser()));
 
                     m_LoadedUserAnalysis.MyStars.CalulateStars(
-                        !pictureInteraction,
                         m_LoadedUserAnalysis.PostInteraction,
                         m_LoadedUserAnalysis.EventInteraction,
                         m_LoadedUserAnalysis.CheckinInteraction,

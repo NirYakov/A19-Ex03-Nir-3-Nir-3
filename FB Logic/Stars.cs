@@ -4,20 +4,20 @@ namespace FB_Logic
 {
     public class Stars : IComparable<Stars>
     {
-        private const float k_PicStartsInterval = 1.5f;
-
         public static int GoldStarBar { get; }
 
         public int GoldenStars { get; private set; } = 0;
 
         public int NormalStars { get; private set; } = 0;
 
+        public IStratgyCalculateStars CalcStars { get; set; }
+
         static Stars()
         {
             GoldStarBar = 60;
         }
 
-        public void CalulateStars(bool i_PicutreStars, params int[] i_Pra)
+        public void CalulateStars(params int[] i_Pra)
         {
             int result = 0;
 
@@ -26,22 +26,10 @@ namespace FB_Logic
                 result += number;
             }
 
-            if (i_PicutreStars)
-            {
-                result = this.calcolatePhotoInteraction(result);
-            }
-            else
-            {
-                result = this.calcolateOtherInteraction(result);
-            }
+            result = CalcStars.CalculateStars(result);
 
             NormalStars = result % GoldStarBar;
             GoldenStars = result / GoldStarBar;
-        }
-
-        private int calcolatePhotoInteraction(int i_Result)
-        {
-            return (int)(i_Result * k_PicStartsInterval);
         }
 
         private int calcolateOtherInteraction(int i_Result)

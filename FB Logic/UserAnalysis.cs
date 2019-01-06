@@ -18,6 +18,7 @@ namespace FB_Logic
         public UserAnalysis()
         {
             MyStars = new Stars();
+            MyStars.CalcStars = new StarsCalculateInteractions();
         }
 
         public int PostInteraction
@@ -138,7 +139,6 @@ namespace FB_Logic
         public void ClacStarsFromAnalisis(eStarsParameters i_eParameter)
         {
             List<int> allParameters = new List<int>();
-            const bool pictureInteraction = true;
 
             if ((i_eParameter & eStarsParameters.Checkin) == eStarsParameters.Checkin)
             {
@@ -160,7 +160,7 @@ namespace FB_Logic
                 allParameters.Add(NumberOfTagged());
             }
 
-            MyStars.CalulateStars(!pictureInteraction, allParameters.ToArray());
+            MyStars.CalulateStars(allParameters.ToArray());
         }
 
         public int CompareTo(UserAnalysis other)

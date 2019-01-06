@@ -33,6 +33,8 @@ namespace WinFormUI
 
             btnLogin.BackColor = Color.CornflowerBlue;
             btnLogin.ForeColor = foreColor;
+
+            //timerUsage.Start();
         }
 
         private void InitializationAfterLogIn()
@@ -167,6 +169,7 @@ namespace WinFormUI
         private void pictureBoxLogOut_Click(object sender, EventArgs e)
         {
             UserManager.UserLogOut();
+            timerUsage.Stop();
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
@@ -307,6 +310,11 @@ Plase try later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             this.Hide();
             new UsersValue().ShowDialog();
             this.Show();
+        }
+
+        private void timerUsage_Tick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Tik Tok");
         }
     }
 }
