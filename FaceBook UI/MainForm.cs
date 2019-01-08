@@ -18,23 +18,31 @@ namespace WinFormUI
 
         private void initSettings()
         {
-            panelData.BackColor = Color.CornflowerBlue;
-            Color foreColor = Color.White;
-            labelFriendsStatus.ForeColor = foreColor;
-            labelFriendsNum.ForeColor = foreColor;
-            labelPostsStatus.ForeColor = foreColor;
-            labelPostsNum.ForeColor = foreColor;
-            labelLikedPagesStatus.ForeColor = foreColor;
-            labelLikedPagesNum.ForeColor = foreColor;
-            labelCheckinsStatus.ForeColor = foreColor;
-            labelCheckinsNum.ForeColor = foreColor;
-            labelEventsStatus.ForeColor = foreColor;
-            labelEventsNum.ForeColor = foreColor;
+            ThemeColorEvent themeColorEvent = GenericSingletons.Singleton<ThemeColorEvent>.Instance;
 
-            btnLogin.BackColor = Color.CornflowerBlue;
-            btnLogin.ForeColor = foreColor;
+            themeColorEvent.ThemeChanged += ThemeColorChanged;
 
-            //timerUsage.Start();
+            themeColorEvent.ChangeTheme(Color.CornflowerBlue, Color.White);
+
+            //timerUsage.Start();   
+        }
+
+        private void ThemeColorChanged(Color i_BackColor, Color i_ForeColor)
+        {
+            panelData.BackColor = i_BackColor;
+            labelFriendsStatus.ForeColor = i_ForeColor;
+            labelFriendsNum.ForeColor = i_ForeColor;
+            labelPostsStatus.ForeColor = i_ForeColor;
+            labelPostsNum.ForeColor = i_ForeColor;
+            labelLikedPagesStatus.ForeColor = i_ForeColor;
+            labelLikedPagesNum.ForeColor = i_ForeColor;
+            labelCheckinsStatus.ForeColor = i_ForeColor;
+            labelCheckinsNum.ForeColor = i_ForeColor;
+            labelEventsStatus.ForeColor = i_ForeColor;
+            labelEventsNum.ForeColor = i_ForeColor;
+
+            btnLogin.BackColor = i_BackColor;
+            btnLogin.ForeColor = i_ForeColor;
         }
 
         private void InitializationAfterLogIn()
@@ -208,7 +216,7 @@ Back later . :(");
                     listBoxFriends.Invoke((new Action(() => eventBindingSource.DataSource = allEvents)));
                 }
             }
-            
+
             catch (Exception)
             {
                 ErrorMessage("Events");
@@ -308,13 +316,36 @@ Plase try later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         private void btnFeature1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new UsersValue().ShowDialog();
+
+            // new UsersValue().ShowDialog();
+            new UsersValue().Show();
+
             this.Show();
         }
 
         private void timerUsage_Tick(object sender, EventArgs e)
         {
             MessageBox.Show("Tik Tok");
+        }
+
+        private void radioButtonThemeColor_CheckedChanged(object sender, EventArgs e)
+        {
+            ThemeColorEvent themeColorEvent = GenericSingletons.Singleton<ThemeColorEvent>.Instance;
+            Color colorBack, colorFore;
+            RadioButton radioButton = sender as RadioButton;
+
+            if (radioButton != null)
+            {
+                colorBack = radioButton.BackColor;
+                colorFore = radioButton.ForeColor;
+            }
+            else
+            {
+                colorBack = Color.CornflowerBlue;
+                colorFore = Color.White;
+            }
+
+            themeColorEvent.ChangeTheme(colorBack, colorFore);
         }
     }
 }

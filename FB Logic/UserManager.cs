@@ -6,15 +6,15 @@ namespace FB_Logic
 {
     public static class UserManager
     {
-        private const string k_AppID = "317399492389792"; // "510658539406597"; // "317399492389792"; 
+        private const string k_AppID = "510658539406597"; // "510658539406597"; // "317399492389792"; 
         private const string k_GuyAppID = "1450160541956417";
         private static User s_LoggedInUser;
 
         public static void Login()
         {
             LoginResult m_LoginResult = FacebookService.Login(
-                    k_AppID,
-            //  k_GuyAppID ,
+               //   k_AppID,
+              k_GuyAppID ,
             "public_profile",
             "user_birthday",
             "user_friends",

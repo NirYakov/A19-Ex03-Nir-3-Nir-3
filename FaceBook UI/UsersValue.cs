@@ -12,8 +12,8 @@ namespace WinFormUI
     public partial class UsersValue : Form
     {
         private readonly List<PictureTopBar> r_PictureTopBars;
-        private readonly Color r_BackColor;
-        private readonly Color r_ForeColor;
+        private Color m_BackColor;
+        private Color m_ForeColor;
         private UserAnalysis m_LoadedUserAnalysis;
         private PicturesManager m_PicutresManager;
         private int m_InitSortGroupBoxHeight = 0;
@@ -49,8 +49,6 @@ by given fields , and sort the best to top.";
         {
             InitializeComponent();
             r_PictureTopBars = new List<PictureTopBar>();
-            r_BackColor = Color.CornflowerBlue;
-            r_ForeColor = Color.White;
             initializeAll();
         }
 
@@ -66,20 +64,32 @@ by given fields , and sort the best to top.";
 
         private void initSettings()
         {
-            groupBoxSortOpt.BackColor = r_BackColor;
-            checkBoxCheckin.ForeColor = r_ForeColor;
-            checkBoxEvents.ForeColor = r_ForeColor;
-            checkBoxPosts.ForeColor = r_ForeColor;
-            checkBoxTagged.ForeColor = r_ForeColor;
+            ThemeColorEvent themeColorEvent = GenericSingletons.Singleton<ThemeColorEvent>.Instance;
 
-            buttonHelp.BackColor = r_BackColor;
-            buttonHelp.ForeColor = r_ForeColor;
+            themeColorEvent.ThemeChanged += ThemeColorChanged;
+
+            themeColorEvent.ChangeTheme(themeColorEvent.BackColor, themeColorEvent.ForeColor);
 
             PictureTopBar ptb = newPictureTopBar(UserManager.UserName, UserManager.UserPictureUrl);
             ptb.AddToClickEvent(pictureTopBar_Click);
             ptb.MyUserAnalysis.UserIn = UserManager.User;
             r_PictureTopBars.Add(ptb);
             flowLayoutPanelFriends.Controls.Add(ptb);
+        }
+
+        private void ThemeColorChanged(Color i_BackColor, Color i_ForeColor)
+        {
+            m_BackColor = i_BackColor;
+            m_ForeColor = i_ForeColor;
+
+            groupBoxSortOpt.BackColor = m_BackColor;
+            checkBoxCheckin.ForeColor = m_ForeColor;
+            checkBoxEvents.ForeColor = m_ForeColor;
+            checkBoxPosts.ForeColor = m_ForeColor;
+            checkBoxTagged.ForeColor = m_ForeColor;
+
+            buttonHelp.BackColor = m_BackColor;
+            buttonHelp.ForeColor = m_ForeColor;
         }
 
         private void initListView()
@@ -121,8 +131,8 @@ by given fields , and sort the best to top.";
         private PictureTopBar newPictureTopBar(string i_LabelTitle, string i_PictureUrl)
         {
             PictureTopBar ptb = new PictureTopBar() { Size = new Size((int)(200 * k_SizeIntervalOfPtb), (int)(250 * k_SizeIntervalOfPtb)) };
-            ptb.TopPanel.BackColor = r_BackColor;
-            ptb.LabelText.ForeColor = r_ForeColor;
+            ptb.TopPanel.BackColor = m_BackColor;
+            ptb.LabelText.ForeColor = m_ForeColor;
             ptb.Picture.LoadAsync(i_PictureUrl);
             ptb.LabelText.Text = i_LabelTitle;
             return ptb;
@@ -381,7 +391,7 @@ Try Later");
                     foreach (PictureAnalysis item in pictureAnalyses)
                     {
                         flowLayoutPanelPickedUserPictures.Controls.Add(
-                            newPictureTopBar( item.ToString(), item.PictureUrl));
+                            newPictureTopBar(item.ToString(), item.PictureUrl));
                     }
                 }
             }

@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GenericSingletons.cs" />
     <Compile Include="IMyObserver.cs" />
     <Compile Include="IStratgyCalculateStars.cs" />
     <Compile Include="ISubjective.cs" />
