@@ -51,7 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IMyObserver.cs" />
     <Compile Include="IStratgyCalculateStars.cs" />
+    <Compile Include="ISubjective.cs" />
     <Compile Include="PostSortsClasses.cs" />
     <Compile Include="FactoryPostSorts.cs" />
     <Compile Include="PicturesManager.cs" />
@@ -60,6 +62,7 @@
     <Compile Include="ProxyPostAnalisys.cs" />
     <Compile Include="Stars.cs" />
     <Compile Include="StarsCalculateClasses.cs" />
+    <Compile Include="ThemeColor.cs" />
     <Compile Include="UserAnalysis.cs" />
     <Compile Include="UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

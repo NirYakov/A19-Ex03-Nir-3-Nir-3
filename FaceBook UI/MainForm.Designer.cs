@@ -69,6 +69,9 @@
             this.checkinBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnUsage = new System.Windows.Forms.Button();
             this.timerUsage = new System.Windows.Forms.Timer(this.components);
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -119,7 +122,7 @@
             this.linkFriends.AutoSize = true;
             this.linkFriends.Enabled = false;
             this.linkFriends.LinkArea = new System.Windows.Forms.LinkArea(0, 13);
-            this.linkFriends.Location = new System.Drawing.Point(28, 625);
+            this.linkFriends.Location = new System.Drawing.Point(28, 635);
             this.linkFriends.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.linkFriends.Name = "linkFriends";
             this.linkFriends.Size = new System.Drawing.Size(512, 54);
@@ -519,7 +522,7 @@
             // 
             // btnUsage
             // 
-            this.btnUsage.Location = new System.Drawing.Point(271, 446);
+            this.btnUsage.Location = new System.Drawing.Point(324, 365);
             this.btnUsage.Name = "btnUsage";
             this.btnUsage.Size = new System.Drawing.Size(134, 60);
             this.btnUsage.TabIndex = 99;
@@ -531,11 +534,53 @@
             this.timerUsage.Interval = 5000;
             this.timerUsage.Tick += new System.EventHandler(this.timerUsage_Tick);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.radioButton1.ForeColor = System.Drawing.Color.White;
+            this.radioButton1.Location = new System.Drawing.Point(257, 464);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(165, 29);
+            this.radioButton1.TabIndex = 100;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = false;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.BackColor = System.Drawing.Color.Chartreuse;
+            this.radioButton2.ForeColor = System.Drawing.Color.Black;
+            this.radioButton2.Location = new System.Drawing.Point(257, 513);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(165, 29);
+            this.radioButton2.TabIndex = 101;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = false;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.BackColor = System.Drawing.Color.DarkRed;
+            this.radioButton3.ForeColor = System.Drawing.Color.Yellow;
+            this.radioButton3.Location = new System.Drawing.Point(257, 562);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(165, 29);
+            this.radioButton3.TabIndex = 102;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "radioButton3";
+            this.radioButton3.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1181, 1312);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.btnUsage);
             this.Controls.Add(this.pictureBoxPage);
             this.Controls.Add(this.pictureBoxEvent);
@@ -624,5 +669,8 @@
         private System.Windows.Forms.BindingSource eventBindingSource;
         private System.Windows.Forms.Button btnUsage;
         private System.Windows.Forms.Timer timerUsage;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
     }
 } 

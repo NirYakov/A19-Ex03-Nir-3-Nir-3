@@ -39,7 +39,7 @@ namespace FB_Logic
         private void initPostList()
         {
             PostsList = new List<Post>();
-            foreach (Post post in TheUser.Posts)   
+            foreach (Post post in TheUser.Posts)    // We get the posts here and just once
             {
                 if (post.Message != null)
                 {
