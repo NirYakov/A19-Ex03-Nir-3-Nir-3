@@ -90,6 +90,18 @@ by given fields , and sort the best to top.";
 
             buttonHelp.BackColor = m_BackColor;
             buttonHelp.ForeColor = m_ForeColor;
+
+            foreach (PictureTopBar item in flowLayoutPanelFriends.Controls)
+            {
+                item.TopPanel.BackColor = i_BackColor;
+                item.LabelText.ForeColor = i_ForeColor;
+            }
+                
+            foreach (PictureTopBar item in flowLayoutPanelPickedUserPictures.Controls)
+            {
+                item.TopPanel.BackColor = i_BackColor;
+                item.LabelText.ForeColor = i_ForeColor;
+            }
         }
 
         private void initListView()

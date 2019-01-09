@@ -24,7 +24,7 @@ namespace WinFormUI
 
             themeColorEvent.ChangeTheme(Color.CornflowerBlue, Color.White);
 
-            //timerUsage.Start();   
+            timerUsage.Start();   
         }
 
         private void ThemeColorChanged(Color i_BackColor, Color i_ForeColor)
@@ -43,10 +43,16 @@ namespace WinFormUI
 
             btnLogin.BackColor = i_BackColor;
             btnLogin.ForeColor = i_ForeColor;
+
+            btnFeature1.BackColor = i_BackColor;
+            btnFeature1.ForeColor = i_ForeColor;
+            btnFeature2.BackColor = i_BackColor;
+            btnFeature2.ForeColor = i_ForeColor;
         }
 
         private void InitializationAfterLogIn()
         {
+            timerUsage.Stop();
             btnFeature1.Enabled = true;
             btnFeature2.Enabled = true;
             linkFriends.Enabled = true;
@@ -86,8 +92,6 @@ namespace WinFormUI
         private void linkFriends_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new Thread(fetchFriends).Start();
-
-            // fetchFriends();
         }
 
         private void fetchFriends()
@@ -325,7 +329,11 @@ Plase try later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         private void timerUsage_Tick(object sender, EventArgs e)
         {
-            MessageBox.Show("Tik Tok");
+            // MessageBox.Show("Tik Tok");
+
+            Color color = btnLogin.BackColor;
+            btnLogin.BackColor = btnLogin.ForeColor;
+            btnLogin.ForeColor = color;
         }
 
         private void radioButtonThemeColor_CheckedChanged(object sender, EventArgs e)

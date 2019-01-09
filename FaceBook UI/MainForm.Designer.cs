@@ -330,6 +330,7 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.Control;
             this.btnLogin.Location = new System.Drawing.Point(324, 302);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
@@ -533,13 +534,14 @@
             // 
             // timerUsage
             // 
-            this.timerUsage.Interval = 5000;
+            this.timerUsage.Interval = 1000;
             this.timerUsage.Tick += new System.EventHandler(this.timerUsage_Tick);
             // 
             // radioButtonBlueWhite
             // 
             this.radioButtonBlueWhite.AutoSize = true;
             this.radioButtonBlueWhite.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.radioButtonBlueWhite.Checked = true;
             this.radioButtonBlueWhite.ForeColor = System.Drawing.Color.White;
             this.radioButtonBlueWhite.Location = new System.Drawing.Point(26, 40);
             this.radioButtonBlueWhite.Name = "radioButtonBlueWhite";
@@ -559,7 +561,6 @@
             this.radioButtonGreenBlack.Name = "radioButtonGreenBlack";
             this.radioButtonGreenBlack.Size = new System.Drawing.Size(181, 29);
             this.radioButtonGreenBlack.TabIndex = 101;
-            this.radioButtonGreenBlack.TabStop = true;
             this.radioButtonGreenBlack.Text = "Green && Black";
             this.radioButtonGreenBlack.UseVisualStyleBackColor = false;
             this.radioButtonGreenBlack.CheckedChanged += new System.EventHandler(this.radioButtonThemeColor_CheckedChanged);
@@ -573,7 +574,6 @@
             this.radioButtonRedYellow.Name = "radioButtonRedYellow";
             this.radioButtonRedYellow.Size = new System.Drawing.Size(172, 29);
             this.radioButtonRedYellow.TabIndex = 102;
-            this.radioButtonRedYellow.TabStop = true;
             this.radioButtonRedYellow.Text = "Red && Yellow";
             this.radioButtonRedYellow.UseVisualStyleBackColor = false;
             this.radioButtonRedYellow.CheckedChanged += new System.EventHandler(this.radioButtonThemeColor_CheckedChanged);
@@ -588,7 +588,7 @@
             this.groupBox1.Size = new System.Drawing.Size(246, 183);
             this.groupBox1.TabIndex = 103;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Theme Color";
             // 
             // MainForm
             // 
