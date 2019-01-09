@@ -52,9 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GenericSingletons.cs" />
-    <Compile Include="IMyObserver.cs" />
     <Compile Include="IStratgyCalculateStars.cs" />
-    <Compile Include="ISubjective.cs" />
     <Compile Include="PostSortsClasses.cs" />
     <Compile Include="FactoryPostSorts.cs" />
     <Compile Include="PicturesManager.cs" />

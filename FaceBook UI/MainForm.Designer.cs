@@ -73,6 +73,9 @@
             this.radioButtonGreenBlack = new System.Windows.Forms.RadioButton();
             this.radioButtonRedYellow = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxInvertColors = new System.Windows.Forms.CheckBox();
+            this.btnDropDown = new System.Windows.Forms.Button();
+            this.timerDropDown = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -124,7 +127,7 @@
             this.linkFriends.AutoSize = true;
             this.linkFriends.Enabled = false;
             this.linkFriends.LinkArea = new System.Windows.Forms.LinkArea(0, 13);
-            this.linkFriends.Location = new System.Drawing.Point(28, 635);
+            this.linkFriends.Location = new System.Drawing.Point(28, 652);
             this.linkFriends.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.linkFriends.Name = "linkFriends";
             this.linkFriends.Size = new System.Drawing.Size(512, 54);
@@ -153,7 +156,7 @@
             this.listBoxFriends.Enabled = false;
             this.listBoxFriends.FormattingEnabled = true;
             this.listBoxFriends.ItemHeight = 25;
-            this.listBoxFriends.Location = new System.Drawing.Point(28, 718);
+            this.listBoxFriends.Location = new System.Drawing.Point(28, 728);
             this.listBoxFriends.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.listBoxFriends.Name = "listBoxFriends";
             this.listBoxFriends.Size = new System.Drawing.Size(304, 554);
@@ -291,7 +294,7 @@
             // 
             this.btnFeature1.Enabled = false;
             this.btnFeature1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFeature1.Location = new System.Drawing.Point(44, 444);
+            this.btnFeature1.Location = new System.Drawing.Point(44, 460);
             this.btnFeature1.Margin = new System.Windows.Forms.Padding(4);
             this.btnFeature1.Name = "btnFeature1";
             this.btnFeature1.Size = new System.Drawing.Size(177, 62);
@@ -304,7 +307,7 @@
             // 
             this.btnFeature2.Enabled = false;
             this.btnFeature2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFeature2.Location = new System.Drawing.Point(44, 530);
+            this.btnFeature2.Location = new System.Drawing.Point(44, 571);
             this.btnFeature2.Margin = new System.Windows.Forms.Padding(4);
             this.btnFeature2.Name = "btnFeature2";
             this.btnFeature2.Size = new System.Drawing.Size(177, 62);
@@ -525,7 +528,7 @@
             // 
             // btnUsage
             // 
-            this.btnUsage.Location = new System.Drawing.Point(324, 365);
+            this.btnUsage.Location = new System.Drawing.Point(372, 722);
             this.btnUsage.Name = "btnUsage";
             this.btnUsage.Size = new System.Drawing.Size(134, 60);
             this.btnUsage.TabIndex = 99;
@@ -541,13 +544,11 @@
             // 
             this.radioButtonBlueWhite.AutoSize = true;
             this.radioButtonBlueWhite.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.radioButtonBlueWhite.Checked = true;
             this.radioButtonBlueWhite.ForeColor = System.Drawing.Color.White;
             this.radioButtonBlueWhite.Location = new System.Drawing.Point(26, 40);
             this.radioButtonBlueWhite.Name = "radioButtonBlueWhite";
             this.radioButtonBlueWhite.Size = new System.Drawing.Size(167, 29);
             this.radioButtonBlueWhite.TabIndex = 100;
-            this.radioButtonBlueWhite.TabStop = true;
             this.radioButtonBlueWhite.Text = "Blue && White";
             this.radioButtonBlueWhite.UseVisualStyleBackColor = false;
             this.radioButtonBlueWhite.CheckedChanged += new System.EventHandler(this.radioButtonThemeColor_CheckedChanged);
@@ -580,21 +581,49 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxInvertColors);
             this.groupBox1.Controls.Add(this.radioButtonBlueWhite);
             this.groupBox1.Controls.Add(this.radioButtonRedYellow);
             this.groupBox1.Controls.Add(this.radioButtonGreenBlack);
-            this.groupBox1.Location = new System.Drawing.Point(238, 436);
+            this.groupBox1.Location = new System.Drawing.Point(238, 404);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(246, 183);
+            this.groupBox1.Size = new System.Drawing.Size(246, 232);
             this.groupBox1.TabIndex = 103;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Theme Color";
+            // 
+            // checkBoxInvertColors
+            // 
+            this.checkBoxInvertColors.AutoSize = true;
+            this.checkBoxInvertColors.Location = new System.Drawing.Point(28, 188);
+            this.checkBoxInvertColors.Name = "checkBoxInvertColors";
+            this.checkBoxInvertColors.Size = new System.Drawing.Size(165, 29);
+            this.checkBoxInvertColors.TabIndex = 104;
+            this.checkBoxInvertColors.Text = "Invert Colors";
+            this.checkBoxInvertColors.UseVisualStyleBackColor = true;
+            this.checkBoxInvertColors.CheckedChanged += new System.EventHandler(this.checkBoxInvertColors_CheckedChanged);
+            // 
+            // btnDropDown
+            // 
+            this.btnDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDropDown.Location = new System.Drawing.Point(435, 402);
+            this.btnDropDown.Name = "btnDropDown";
+            this.btnDropDown.Size = new System.Drawing.Size(36, 36);
+            this.btnDropDown.TabIndex = 104;
+            this.btnDropDown.Text = "▲";
+            this.btnDropDown.UseVisualStyleBackColor = true;
+            this.btnDropDown.Click += new System.EventHandler(this.btnDropDown_Click);
+            // 
+            // timerDropDown
+            // 
+            this.timerDropDown.Tick += new System.EventHandler(this.timerDropDown_Tick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1181, 1312);
+            this.Controls.Add(this.btnDropDown);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnUsage);
             this.Controls.Add(this.pictureBoxPage);
@@ -690,5 +719,8 @@
         private System.Windows.Forms.RadioButton radioButtonGreenBlack;
         private System.Windows.Forms.RadioButton radioButtonRedYellow;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox checkBoxInvertColors;
+        private System.Windows.Forms.Button btnDropDown;
+        private System.Windows.Forms.Timer timerDropDown;
     }
 } 

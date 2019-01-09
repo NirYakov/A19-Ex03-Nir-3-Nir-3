@@ -44,6 +44,9 @@ namespace WinFormUI
             btnLogin.BackColor = i_BackColor;
             btnLogin.ForeColor = i_ForeColor;
 
+            checkBoxInvertColors.BackColor = i_ForeColor;
+            checkBoxInvertColors.ForeColor = i_BackColor;
+
             btnFeature1.BackColor = i_BackColor;
             btnFeature1.ForeColor = i_ForeColor;
             btnFeature2.BackColor = i_BackColor;
@@ -344,8 +347,16 @@ Plase try later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             if (radioButton != null)
             {
-                colorBack = radioButton.BackColor;
-                colorFore = radioButton.ForeColor;
+                if (checkBoxInvertColors.Checked)
+                {
+                    colorBack = radioButton.ForeColor;
+                    colorFore = radioButton.BackColor;
+                }
+                else
+                {
+                    colorBack = radioButton.BackColor;
+                    colorFore = radioButton.ForeColor;
+                }
             }
             else
             {
@@ -354,6 +365,58 @@ Plase try later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             themeColorEvent.ChangeTheme(colorBack, colorFore);
+        }
+
+        private void checkBoxInvertColors_CheckedChanged(object sender, EventArgs e)
+        {
+            ThemeColorEvent themeColorEvent = GenericSingletons.Singleton<ThemeColorEvent>.Instance;
+            themeColorEvent.ChangeTheme(themeColorEvent.ForeColor, themeColorEvent.BackColor);
+        }
+
+        private void btnDropDown_Click(object sender, EventArgs e)
+        {
+            string arrowDir;
+
+
+            timerDropDown.Start();
+
+            //if (btnDropDown.Bottom == groupBox1.Bottom)
+            //{
+            //    arrowDir = "▲";
+            //}
+            //else
+            //{
+            //    arrowDir = "▼";
+            //}
+
+            //btnDropDown.Text = arrowDir;
+        }
+
+        private void timerDropDown_Tick(object sender, EventArgs e)
+        {
+            int interval = 10;
+
+            if (btnDropDown.Text == "▲")
+            {
+                interval *= -1;
+            }
+
+            groupBox1.Height += interval;
+
+            if (interval < 0 && btnDropDown.Bottom >= groupBox1.Bottom)//|| groupBox1.Bottom <= checkBoxInvertColors.Bottom + 10)
+            {
+                timerDropDown.Stop();
+                btnDropDown.Text = "▼";
+                // MessageBox.Show($"{checkBoxInvertColors.Bottom}");
+            }
+            else
+            {
+                if (groupBox1.Bottom >= btnFeature2.Bottom)
+                {
+                    timerDropDown.Stop();
+                    btnDropDown.Text = "▲";
+                }
+            }
         }
     }
 }

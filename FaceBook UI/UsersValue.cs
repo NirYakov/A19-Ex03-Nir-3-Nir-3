@@ -91,6 +91,18 @@ by given fields , and sort the best to top.";
             buttonHelp.BackColor = m_BackColor;
             buttonHelp.ForeColor = m_ForeColor;
 
+            groupBox2.BackColor = m_BackColor;
+            labelTheName.ForeColor = m_ForeColor;
+            labelName.ForeColor = m_ForeColor;
+            label3.ForeColor = m_ForeColor;
+            label5.ForeColor = m_ForeColor;
+            label7.ForeColor = m_ForeColor;
+            label2.ForeColor = m_ForeColor;
+            labelTheTown.ForeColor = m_ForeColor;
+            labelTheFirendsCount.ForeColor = m_ForeColor;
+            labelTheTagged.ForeColor = m_ForeColor;
+            labelBDay.ForeColor = m_ForeColor;
+
             foreach (PictureTopBar item in flowLayoutPanelFriends.Controls)
             {
                 item.TopPanel.BackColor = i_BackColor;
@@ -478,6 +490,11 @@ Try Later");
             {
                 return i_X.MyUserAnalysis.CompareTo(i_Y.MyUserAnalysis);
             }
+        }
+
+        private void radioButtonShowSort_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
