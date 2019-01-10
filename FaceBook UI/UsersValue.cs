@@ -64,11 +64,9 @@ by given fields , and sort the best to top.";
 
         private void initSettings()
         {
-            ThemeColorEvent themeColorEvent = GenericSingletons.Singleton<ThemeColorEvent>.Instance;
-
+            ThemeColor themeColorEvent = GenericSingletons.Singleton<ThemeColor>.Instance;
             themeColorEvent.ThemeChanged += ThemeColorChanged;
-
-            themeColorEvent.ChangeTheme(themeColorEvent.BackColor, themeColorEvent.ForeColor);
+            ThemeColorChanged(themeColorEvent.BackColor, themeColorEvent.ForeColor);
 
             PictureTopBar ptb = newPictureTopBar(UserManager.UserName, UserManager.UserPictureUrl);
             ptb.AddToClickEvent(pictureTopBar_Click);
@@ -83,6 +81,7 @@ by given fields , and sort the best to top.";
             m_ForeColor = i_ForeColor;
 
             groupBoxSortOpt.BackColor = m_BackColor;
+            groupBoxSortOpt.ForeColor = m_ForeColor;
             checkBoxCheckin.ForeColor = m_ForeColor;
             checkBoxEvents.ForeColor = m_ForeColor;
             checkBoxPosts.ForeColor = m_ForeColor;
@@ -92,6 +91,7 @@ by given fields , and sort the best to top.";
             buttonHelp.ForeColor = m_ForeColor;
 
             groupBox2.BackColor = m_BackColor;
+            groupBox2.ForeColor = m_ForeColor;
             labelTheName.ForeColor = m_ForeColor;
             labelName.ForeColor = m_ForeColor;
             label3.ForeColor = m_ForeColor;

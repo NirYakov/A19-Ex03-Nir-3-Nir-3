@@ -18,7 +18,7 @@ namespace WinFormUI
 
         private void initSettings()
         {
-            ThemeColorEvent themeColorEvent = GenericSingletons.Singleton<ThemeColorEvent>.Instance;
+            ThemeColor themeColorEvent = GenericSingletons.Singleton<ThemeColor>.Instance;
 
             themeColorEvent.ThemeChanged += ThemeColorChanged;
 
@@ -341,7 +341,7 @@ Plase try later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         private void radioButtonThemeColor_CheckedChanged(object sender, EventArgs e)
         {
-            ThemeColorEvent themeColorEvent = GenericSingletons.Singleton<ThemeColorEvent>.Instance;
+            ThemeColor themeColorEvent = GenericSingletons.Singleton<ThemeColor>.Instance;
             Color colorBack, colorFore;
             RadioButton radioButton = sender as RadioButton;
 
@@ -369,7 +369,7 @@ Plase try later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         private void checkBoxInvertColors_CheckedChanged(object sender, EventArgs e)
         {
-            ThemeColorEvent themeColorEvent = GenericSingletons.Singleton<ThemeColorEvent>.Instance;
+            ThemeColor themeColorEvent = GenericSingletons.Singleton<ThemeColor>.Instance;
             themeColorEvent.ChangeTheme(themeColorEvent.ForeColor, themeColorEvent.BackColor);
         }
 

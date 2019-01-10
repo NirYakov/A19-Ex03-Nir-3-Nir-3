@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
+using FB_Logic;
 
 namespace WinFormUI
 {
@@ -13,19 +15,29 @@ namespace WinFormUI
         {
             ThePost = i_ThePost;
             InitializeComponent();
+            ThemeColor themeColorEvent = GenericSingletons.Singleton<ThemeColor>.Instance;
+            themeColorEvent.ThemeChanged += ThemeColorChanged;
+            ThemeColorChanged(themeColorEvent.BackColor, themeColorEvent.ForeColor);
+
+        }
+
+        private void ThemeColorChanged(Color i_BackColor, Color i_ForeColor)
+        {
+            lableStatus.BackColor = i_BackColor;
+            lableStatus.ForeColor = i_ForeColor;
         }
 
         private void FormPostSummary_Load(object sender, EventArgs e)
         {
             lableStatus.Text = ThePost.Message;
-           
+
             foreach (Comment comment in ThePost.Comments)
             {
                 listBoxComments.Items.Add(comment.ToString());
             }
 
             labelNumOfLikes.Text = ThePost.LikedBy.Count.ToString();
-            dateTimePicker1.Value = new DateTime( ThePost.UpdateTime.Value.Ticks);
+            dateTimePicker1.Value = new DateTime(ThePost.UpdateTime.Value.Ticks);
         }
 
         private void linkToPostOnFB_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -38,11 +50,6 @@ namespace WinFormUI
             {
                 MessageBox.Show(exception.Message);
             }
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

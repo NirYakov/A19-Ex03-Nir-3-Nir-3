@@ -76,6 +76,7 @@
             this.checkBoxInvertColors = new System.Windows.Forms.CheckBox();
             this.btnDropDown = new System.Windows.Forms.Button();
             this.timerDropDown = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -618,11 +619,23 @@
             // 
             this.timerDropDown.Tick += new System.EventHandler(this.timerDropDown_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 588);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 31);
+            this.label1.TabIndex = 105;
+            this.label1.Text = "▶";
+            this.label1.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1181, 1312);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDropDown);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnUsage);
@@ -722,5 +735,6 @@
         private System.Windows.Forms.CheckBox checkBoxInvertColors;
         private System.Windows.Forms.Button btnDropDown;
         private System.Windows.Forms.Timer timerDropDown;
+        private System.Windows.Forms.Label label1;
     }
 } 

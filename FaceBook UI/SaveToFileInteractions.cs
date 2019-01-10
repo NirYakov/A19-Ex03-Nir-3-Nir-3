@@ -28,8 +28,19 @@ namespace WinFormUI
         public SaveToFileInteractions()
         {
             InitializeComponent();
-            labelName.BackColor = Color.CornflowerBlue;
-            labelName.ForeColor = Color.White;
+
+            ThemeColor themeColorEvent = GenericSingletons.Singleton<ThemeColor>.Instance;
+            themeColorEvent.ThemeChanged += ThemeColorChanged;
+            ThemeColorChanged(themeColorEvent.BackColor, themeColorEvent.ForeColor);
+
+        }
+
+        private void ThemeColorChanged(Color i_BackColor, Color i_ForeColor)
+        {
+            labelName.BackColor = i_BackColor;
+            labelName.ForeColor = i_ForeColor;
+            groupBoxExtra.BackColor = i_BackColor;
+            groupBoxExtra.ForeColor = i_ForeColor;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)

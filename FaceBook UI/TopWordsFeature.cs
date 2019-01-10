@@ -4,6 +4,7 @@ using System.Linq;
 using FB_Logic;
 using FacebookWrapper.ObjectModel;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace WinFormUI
 {
@@ -33,6 +34,19 @@ namespace WinFormUI
             radioButtonAlphabetical.CheckedChanged += new EventHandler(radioButtons_CheckedChanged);
             radioButtonLikes.CheckedChanged += new EventHandler(radioButtons_CheckedChanged);
             radioButtonRecent.CheckedChanged += new EventHandler(radioButtons_CheckedChanged);
+            ThemeColor themeColorEvent = GenericSingletons.Singleton<ThemeColor>.Instance;
+            themeColorEvent.ThemeChanged += ThemeColorChanged;
+            ThemeColorChanged(themeColorEvent.BackColor, themeColorEvent.ForeColor);
+
+        }
+
+        private void ThemeColorChanged(Color i_BackColor, Color i_ForeColor)
+        {
+            radioButtonRecent.ForeColor = i_ForeColor;
+            radioButtonAlphabetical.ForeColor = i_ForeColor;
+            radioButtonLikes.ForeColor = i_ForeColor;
+            groupBox1.BackColor = i_BackColor;
+            groupBox1.ForeColor = i_ForeColor;
         }
 
         private void ListBoxTopWords_SelectedIndexChanged(object sender, EventArgs e)
