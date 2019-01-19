@@ -16,12 +16,12 @@ namespace WinFormUI
             ThePost = i_ThePost;
             InitializeComponent();
             ThemeColor themeColorEvent = GenericSingletons.Singleton<ThemeColor>.Instance;
-            themeColorEvent.ThemeChanged += ThemeColorChanged;
-            ThemeColorChanged(themeColorEvent.BackColor, themeColorEvent.ForeColor);
+            themeColorEvent.ThemeChanged += themeColor_ChangedTheme;
+            themeColor_ChangedTheme(themeColorEvent.BackColor, themeColorEvent.ForeColor);
 
         }
 
-        private void ThemeColorChanged(Color i_BackColor, Color i_ForeColor)
+        private void themeColor_ChangedTheme(Color i_BackColor, Color i_ForeColor)
         {
             lableStatus.BackColor = i_BackColor;
             lableStatus.ForeColor = i_ForeColor;

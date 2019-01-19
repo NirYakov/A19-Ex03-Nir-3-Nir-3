@@ -65,8 +65,8 @@ by given fields , and sort the best to top.";
         private void initSettings()
         {
             ThemeColor themeColorEvent = GenericSingletons.Singleton<ThemeColor>.Instance;
-            themeColorEvent.ThemeChanged += ThemeColorChanged;
-            ThemeColorChanged(themeColorEvent.BackColor, themeColorEvent.ForeColor);
+            themeColorEvent.ThemeChanged += themeColor_ChangedTheme;
+            themeColor_ChangedTheme(themeColorEvent.BackColor, themeColorEvent.ForeColor);
 
             PictureTopBar ptb = newPictureTopBar(UserManager.UserName, UserManager.UserPictureUrl);
             ptb.AddToClickEvent(pictureTopBar_Click);
@@ -75,7 +75,7 @@ by given fields , and sort the best to top.";
             flowLayoutPanelFriends.Controls.Add(ptb);
         }
 
-        private void ThemeColorChanged(Color i_BackColor, Color i_ForeColor)
+        private void themeColor_ChangedTheme(Color i_BackColor, Color i_ForeColor)
         {
             m_BackColor = i_BackColor;
             m_ForeColor = i_ForeColor;

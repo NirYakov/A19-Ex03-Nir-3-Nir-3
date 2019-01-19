@@ -22,10 +22,16 @@ namespace FB_Logic
 
     public class StarsCalculatePictures : IStratgyCalculateStars
     {
+        private readonly float r_PicStartsInterval; // 1.5f
+
+        public StarsCalculatePictures(float i_PicStartInterval = 1.5f)
+        {
+            r_PicStartsInterval = i_PicStartInterval;
+        }
+
         public int CalculateStars(int i_Interaction)
         {
-            const float picStartsInterval = 1.5f;
-            return (int)(i_Interaction * picStartsInterval);
+            return (int)(i_Interaction * r_PicStartsInterval);
         }
     }
 }

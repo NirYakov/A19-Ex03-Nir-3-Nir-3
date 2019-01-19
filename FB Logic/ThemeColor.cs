@@ -6,7 +6,7 @@ using System.IO;
 
 namespace FB_Logic
 {
-    public class ThemeColor
+    public sealed class ThemeColor
     {
         public Color BackColor { get; private set; } = Color.CornflowerBlue;
         public Color ForeColor { get; private set; } = Color.White;
@@ -17,7 +17,7 @@ namespace FB_Logic
         {
         }
 
-        private void NotifyAllThemeChanged(Color i_BackColor, Color i_ForeColor)
+        private void OnThemeChanged(Color i_BackColor, Color i_ForeColor)
         {
             if (ThemeChanged != null)
             {
@@ -30,7 +30,7 @@ namespace FB_Logic
             BackColor = i_BackColor;
             ForeColor = i_ForeColor;
 
-            NotifyAllThemeChanged(i_BackColor, i_ForeColor);
+            OnThemeChanged(i_BackColor, i_ForeColor);
         }
     }
 }

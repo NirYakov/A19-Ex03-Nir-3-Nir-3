@@ -32,17 +32,6 @@ namespace FB_Logic
             GoldenStars = result / GoldStarBar;
         }
 
-        private int calcolateOtherInteraction(int i_Result)
-        {
-            if (i_Result > GoldStarBar)
-            {
-                i_Result += 10;
-                i_Result += i_Result % 10;
-            }
-
-            return i_Result;
-        }
-
         public int CompareTo(Stars i_Other)
         {
             return i_Other.StarsToNumbers() - this.StarsToNumbers();

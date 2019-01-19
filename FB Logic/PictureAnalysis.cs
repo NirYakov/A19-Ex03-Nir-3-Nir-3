@@ -14,8 +14,7 @@ namespace FB_Logic
 
         public PictureAnalysis()
         {
-            MyStars = new Stars();
-            MyStars.CalcStars = new StarsCalculatePictures();
+            MyStars = new Stars() { CalcStars = new StarsCalculatePictures() };
         }
 
         public void CalcStars(int i_LikeCount, int i_CommentCount)

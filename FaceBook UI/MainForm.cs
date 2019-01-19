@@ -20,14 +20,14 @@ namespace WinFormUI
         {
             ThemeColor themeColorEvent = GenericSingletons.Singleton<ThemeColor>.Instance;
 
-            themeColorEvent.ThemeChanged += ThemeColorChanged;
+            themeColorEvent.ThemeChanged += themeColor_ChangedTheme;
 
             themeColorEvent.ChangeTheme(Color.CornflowerBlue, Color.White);
 
-            timerUsage.Start();   
+            timerUsage.Start();
         }
 
-        private void ThemeColorChanged(Color i_BackColor, Color i_ForeColor)
+        private void themeColor_ChangedTheme(Color i_BackColor, Color i_ForeColor)
         {
             panelData.BackColor = i_BackColor;
             labelFriendsStatus.ForeColor = i_ForeColor;
@@ -323,8 +323,7 @@ Plase try later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         private void btnFeature1_Click(object sender, EventArgs e)
         {
             this.Hide();
-
-            // new UsersValue().ShowDialog();
+            
             new UsersValue().Show();
 
             this.Show();
@@ -332,8 +331,6 @@ Plase try later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         private void timerUsage_Tick(object sender, EventArgs e)
         {
-            // MessageBox.Show("Tik Tok");
-
             Color color = btnLogin.BackColor;
             btnLogin.BackColor = btnLogin.ForeColor;
             btnLogin.ForeColor = color;
@@ -375,21 +372,7 @@ Plase try later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         private void btnDropDown_Click(object sender, EventArgs e)
         {
-            string arrowDir;
-
-
             timerDropDown.Start();
-
-            //if (btnDropDown.Bottom == groupBox1.Bottom)
-            //{
-            //    arrowDir = "▲";
-            //}
-            //else
-            //{
-            //    arrowDir = "▼";
-            //}
-
-            //btnDropDown.Text = arrowDir;
         }
 
         private void timerDropDown_Tick(object sender, EventArgs e)

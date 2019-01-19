@@ -67,7 +67,6 @@
             this.pictureBoxEvent = new System.Windows.Forms.PictureBox();
             this.pictureBoxPage = new System.Windows.Forms.PictureBox();
             this.checkinBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnUsage = new System.Windows.Forms.Button();
             this.timerUsage = new System.Windows.Forms.Timer(this.components);
             this.radioButtonBlueWhite = new System.Windows.Forms.RadioButton();
             this.radioButtonGreenBlack = new System.Windows.Forms.RadioButton();
@@ -527,15 +526,6 @@
             // 
             this.checkinBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.Checkin);
             // 
-            // btnUsage
-            // 
-            this.btnUsage.Location = new System.Drawing.Point(372, 722);
-            this.btnUsage.Name = "btnUsage";
-            this.btnUsage.Size = new System.Drawing.Size(134, 60);
-            this.btnUsage.TabIndex = 99;
-            this.btnUsage.Text = "Usage";
-            this.btnUsage.UseVisualStyleBackColor = true;
-            // 
             // timerUsage
             // 
             this.timerUsage.Interval = 1000;
@@ -638,7 +628,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDropDown);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnUsage);
             this.Controls.Add(this.pictureBoxPage);
             this.Controls.Add(this.pictureBoxEvent);
             this.Controls.Add(this.panelData);
@@ -726,7 +715,6 @@
         private System.Windows.Forms.BindingSource userBindingSource;
         private System.Windows.Forms.BindingSource checkinBindingSource;
         private System.Windows.Forms.BindingSource eventBindingSource;
-        private System.Windows.Forms.Button btnUsage;
         private System.Windows.Forms.Timer timerUsage;
         private System.Windows.Forms.RadioButton radioButtonBlueWhite;
         private System.Windows.Forms.RadioButton radioButtonGreenBlack;

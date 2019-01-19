@@ -30,12 +30,12 @@ namespace WinFormUI
             InitializeComponent();
 
             ThemeColor themeColorEvent = GenericSingletons.Singleton<ThemeColor>.Instance;
-            themeColorEvent.ThemeChanged += ThemeColorChanged;
-            ThemeColorChanged(themeColorEvent.BackColor, themeColorEvent.ForeColor);
+            themeColorEvent.ThemeChanged += themeColor_ChangedTheme;
+            themeColor_ChangedTheme(themeColorEvent.BackColor, themeColorEvent.ForeColor);
 
         }
 
-        private void ThemeColorChanged(Color i_BackColor, Color i_ForeColor)
+        private void themeColor_ChangedTheme(Color i_BackColor, Color i_ForeColor)
         {
             labelName.BackColor = i_BackColor;
             labelName.ForeColor = i_ForeColor;

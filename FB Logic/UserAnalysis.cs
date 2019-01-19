@@ -17,8 +17,7 @@ namespace FB_Logic
 
         public UserAnalysis()
         {
-            MyStars = new Stars();
-            MyStars.CalcStars = new StarsCalculateInteractions();
+            MyStars = new Stars() { CalcStars = new StarsCalculateInteractions() };
         }
 
         public int PostInteraction
