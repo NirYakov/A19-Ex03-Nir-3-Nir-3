@@ -5,6 +5,7 @@ using FB_Logic;
 using FacebookWrapper.ObjectModel;
 using System.Windows.Forms;
 using System.Drawing;
+using A19_Ex1_Nir_0_Nir_0;
 
 namespace WinFormUI
 {
@@ -103,6 +104,12 @@ namespace WinFormUI
 
             listboxTotalPosts.DataSource = r_PostAnalysis.SortByParameter(sortMethod, listToSort);
             
+        }
+
+        private void buttonSaveToFile_Click(object sender, EventArgs e)
+        {
+            SavePostsTofFileForm saveTofFileForm = new  SavePostsTofFileForm(r_PostAnalysis.PostsList);
+            saveTofFileForm.Show();
         }
     }
 }

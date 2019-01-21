@@ -39,6 +39,7 @@
             this.radioButtonLikes = new System.Windows.Forms.RadioButton();
             this.radioButtonAlphabetical = new System.Windows.Forms.RadioButton();
             this.radioButtonRecent = new System.Windows.Forms.RadioButton();
+            this.buttonSaveToFile = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,11 +155,22 @@
             this.radioButtonRecent.Text = "Recent";
             this.radioButtonRecent.UseVisualStyleBackColor = true;
             // 
+            // buttonSaveToFile
+            // 
+            this.buttonSaveToFile.Location = new System.Drawing.Point(112, 531);
+            this.buttonSaveToFile.Name = "buttonSaveToFile";
+            this.buttonSaveToFile.Size = new System.Drawing.Size(257, 75);
+            this.buttonSaveToFile.TabIndex = 11;
+            this.buttonSaveToFile.Text = "Save To File";
+            this.buttonSaveToFile.UseVisualStyleBackColor = true;
+            this.buttonSaveToFile.Click += new System.EventHandler(this.buttonSaveToFile_Click);
+            // 
             // TopWordsFeature
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 647);
+            this.Controls.Add(this.buttonSaveToFile);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -192,5 +204,6 @@
         private System.Windows.Forms.RadioButton radioButtonLikes;
         private System.Windows.Forms.RadioButton radioButtonAlphabetical;
         private System.Windows.Forms.RadioButton radioButtonRecent;
+        private System.Windows.Forms.Button buttonSaveToFile;
     }
 }

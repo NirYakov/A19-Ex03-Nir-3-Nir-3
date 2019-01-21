@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PostToFileClasses\FileGenerator.cs" />
     <Compile Include="GenericSingletons.cs" />
     <Compile Include="IStratgyCalculateStars.cs" />
     <Compile Include="PostSortsClasses.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="PicturesManager.cs" />
     <Compile Include="PictureAnalysis.cs" />
     <Compile Include="PostAnalysis.cs" />
+    <Compile Include="PostToFileClasses\XmlFileGenerator.cs" />
     <Compile Include="ProxyPostAnalisys.cs" />
     <Compile Include="Stars.cs" />
     <Compile Include="StarsCalculateClasses.cs" />
