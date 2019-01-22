@@ -41,17 +41,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(72, 49);
+            this.label1.Location = new System.Drawing.Point(48, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 20);
+            this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Title";
             // 
             // textBoxFileTitle
             // 
-            this.textBoxFileTitle.Location = new System.Drawing.Point(126, 43);
+            this.textBoxFileTitle.Location = new System.Drawing.Point(84, 28);
+            this.textBoxFileTitle.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFileTitle.Name = "textBoxFileTitle";
-            this.textBoxFileTitle.Size = new System.Drawing.Size(170, 26);
+            this.textBoxFileTitle.Size = new System.Drawing.Size(115, 20);
             this.textBoxFileTitle.TabIndex = 1;
             // 
             // comboBoxTyps
@@ -60,25 +62,29 @@
             this.comboBoxTyps.Items.AddRange(new object[] {
             "XML",
             "Text File"});
-            this.comboBoxTyps.Location = new System.Drawing.Point(126, 97);
+            this.comboBoxTyps.Location = new System.Drawing.Point(84, 63);
+            this.comboBoxTyps.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxTyps.Name = "comboBoxTyps";
-            this.comboBoxTyps.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxTyps.Size = new System.Drawing.Size(82, 21);
             this.comboBoxTyps.TabIndex = 2;
+            this.comboBoxTyps.SelectedIndexChanged += new System.EventHandler(this.comboBoxTyps_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 97);
+            this.label2.Location = new System.Drawing.Point(11, 63);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 20);
+            this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Type Of File";
             // 
             // buttonCreateFile
             // 
-            this.buttonCreateFile.Location = new System.Drawing.Point(476, 277);
+            this.buttonCreateFile.Location = new System.Drawing.Point(317, 180);
+            this.buttonCreateFile.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCreateFile.Name = "buttonCreateFile";
-            this.buttonCreateFile.Size = new System.Drawing.Size(139, 86);
+            this.buttonCreateFile.Size = new System.Drawing.Size(93, 56);
             this.buttonCreateFile.TabIndex = 4;
             this.buttonCreateFile.Text = "Create File";
             this.buttonCreateFile.UseVisualStyleBackColor = true;
@@ -86,17 +92,19 @@
             // 
             // textBoxPath
             // 
-            this.textBoxPath.Location = new System.Drawing.Point(102, 166);
+            this.textBoxPath.Location = new System.Drawing.Point(68, 128);
+            this.textBoxPath.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPath.Name = "textBoxPath";
-            this.textBoxPath.Size = new System.Drawing.Size(300, 26);
+            this.textBoxPath.Size = new System.Drawing.Size(201, 20);
             this.textBoxPath.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 166);
+            this.label3.Location = new System.Drawing.Point(11, 135);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 20);
+            this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Save To";
             // 
@@ -105,9 +113,10 @@
             this.buttonBrowse.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.buttonBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBrowse.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonBrowse.Location = new System.Drawing.Point(408, 157);
+            this.buttonBrowse.Location = new System.Drawing.Point(287, 119);
+            this.buttonBrowse.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBrowse.Name = "buttonBrowse";
-            this.buttonBrowse.Size = new System.Drawing.Size(91, 44);
+            this.buttonBrowse.Size = new System.Drawing.Size(61, 29);
             this.buttonBrowse.TabIndex = 7;
             this.buttonBrowse.Text = "Browse";
             this.buttonBrowse.UseVisualStyleBackColor = false;
@@ -115,10 +124,10 @@
             // 
             // SavePostsTofFileForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(624, 376);
+            this.ClientSize = new System.Drawing.Size(416, 244);
             this.Controls.Add(this.buttonBrowse);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxPath);
@@ -127,6 +136,7 @@
             this.Controls.Add(this.comboBoxTyps);
             this.Controls.Add(this.textBoxFileTitle);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SavePostsTofFileForm";
             this.Text = "Save To File";
             this.Load += new System.EventHandler(this.SaveTofFileForm_Load);

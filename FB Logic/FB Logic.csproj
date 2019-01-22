@@ -59,6 +59,7 @@
     <Compile Include="PicturesManager.cs" />
     <Compile Include="PictureAnalysis.cs" />
     <Compile Include="PostAnalysis.cs" />
+    <Compile Include="PostToFileClasses\SimpleTextFileGenertor.cs" />
     <Compile Include="PostToFileClasses\XmlFileGenerator.cs" />
     <Compile Include="ProxyPostAnalisys.cs" />
     <Compile Include="Stars.cs" />

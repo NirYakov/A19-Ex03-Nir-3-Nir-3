@@ -108,7 +108,7 @@ namespace WinFormUI
 
         private void buttonSaveToFile_Click(object sender, EventArgs e)
         {
-            SavePostsTofFileForm saveTofFileForm = new  SavePostsTofFileForm(r_PostAnalysis.PostsList);
+            SavePostsTofFileForm saveTofFileForm = new  SavePostsTofFileForm(listboxTotalPosts.Items.OfType<Post>().ToList());
             saveTofFileForm.Show();
         }
     }
