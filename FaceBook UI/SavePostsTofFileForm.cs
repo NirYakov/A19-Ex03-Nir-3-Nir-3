@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 using FB_Logic;
+using FB_Logic.PostToFileClasses;
 
 namespace A19_Ex1_Nir_0_Nir_0
 {
@@ -24,7 +25,7 @@ namespace A19_Ex1_Nir_0_Nir_0
         private void SaveTofFileForm_Load(object sender, EventArgs e)
         {
             textBoxFileTitle.Text = String.Format("My Posts {0}", DateTime.Now.ToString("yy-MM-dd"));
-        ;
+            ;
         }
 
         private void buttonBrowse_Click(object sender, EventArgs e)
@@ -39,19 +40,33 @@ namespace A19_Ex1_Nir_0_Nir_0
 
         private void buttonCreateFile_Click(object sender, EventArgs e)
         {
-            if (comboBoxTyps.Text == "Text File")
+            if (textBoxPath.Text == string.Empty || comboBoxTyps.Text == string.Empty ||
+                textBoxFileTitle.Text == string.Empty)
             {
-                FileGenerator fileGenerator = new SimpleTextFileGenertor(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
-            }
+                MessageBox.Show("Invalid values", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            if (comboBoxTyps.Text == "XML")
+            }
+            else
             {
-                FileGenerator fileGenerator = new XmlFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text); 
-            }
+                if (comboBoxTyps.Text == "Text File")
+                {
+                        new SimpleTextFileGenertor(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
+                }
 
-            MessageBox.Show("File has been saved");
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                if (comboBoxTyps.Text == "XML")
+                {
+                        new XmlFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
+                }
+
+                if (comboBoxTyps.Text == "JSON")
+                {
+                        new JSONFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
+                }
+
+                MessageBox.Show("File has been saved");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void comboBoxTyps_SelectedIndexChanged(object sender, EventArgs e)

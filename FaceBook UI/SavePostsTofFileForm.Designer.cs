@@ -33,8 +33,8 @@
             this.comboBoxTyps = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonCreateFile = new System.Windows.Forms.Button();
-            this.textBoxPath = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBoxPath = new System.Windows.Forms.TextBox();
             this.buttonBrowse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -61,6 +61,7 @@
             this.comboBoxTyps.FormattingEnabled = true;
             this.comboBoxTyps.Items.AddRange(new object[] {
             "XML",
+            "JSON",
             "Text File"});
             this.comboBoxTyps.Location = new System.Drawing.Point(84, 63);
             this.comboBoxTyps.Margin = new System.Windows.Forms.Padding(2);
@@ -81,7 +82,7 @@
             // 
             // buttonCreateFile
             // 
-            this.buttonCreateFile.Location = new System.Drawing.Point(317, 180);
+            this.buttonCreateFile.Location = new System.Drawing.Point(269, 135);
             this.buttonCreateFile.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCreateFile.Name = "buttonCreateFile";
             this.buttonCreateFile.Size = new System.Drawing.Size(93, 56);
@@ -90,30 +91,30 @@
             this.buttonCreateFile.UseVisualStyleBackColor = true;
             this.buttonCreateFile.Click += new System.EventHandler(this.buttonCreateFile_Click);
             // 
-            // textBoxPath
-            // 
-            this.textBoxPath.Location = new System.Drawing.Point(68, 128);
-            this.textBoxPath.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxPath.Name = "textBoxPath";
-            this.textBoxPath.Size = new System.Drawing.Size(201, 20);
-            this.textBoxPath.TabIndex = 5;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 135);
+            this.label3.Location = new System.Drawing.Point(25, 104);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Save To";
             // 
+            // textBoxPath
+            // 
+            this.textBoxPath.Location = new System.Drawing.Point(82, 97);
+            this.textBoxPath.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPath.Name = "textBoxPath";
+            this.textBoxPath.Size = new System.Drawing.Size(201, 20);
+            this.textBoxPath.TabIndex = 5;
+            // 
             // buttonBrowse
             // 
             this.buttonBrowse.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.buttonBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBrowse.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonBrowse.Location = new System.Drawing.Point(287, 119);
+            this.buttonBrowse.Location = new System.Drawing.Point(301, 88);
             this.buttonBrowse.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBrowse.Name = "buttonBrowse";
             this.buttonBrowse.Size = new System.Drawing.Size(61, 29);
@@ -127,7 +128,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(416, 244);
+            this.ClientSize = new System.Drawing.Size(370, 197);
             this.Controls.Add(this.buttonBrowse);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxPath);
@@ -136,6 +137,7 @@
             this.Controls.Add(this.comboBoxTyps);
             this.Controls.Add(this.textBoxFileTitle);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SavePostsTofFileForm";
             this.Text = "Save To File";
@@ -152,8 +154,8 @@
         private System.Windows.Forms.ComboBox comboBoxTyps;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonCreateFile;
-        private System.Windows.Forms.TextBox textBoxPath;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxPath;
         private System.Windows.Forms.Button buttonBrowse;
     }
 }
