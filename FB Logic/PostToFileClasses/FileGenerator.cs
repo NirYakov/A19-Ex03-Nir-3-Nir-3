@@ -34,7 +34,9 @@ namespace FB_Logic
 
         private void populateContectToFile()
         {
-            File.WriteAllText(FullPath, FileContects);
+
+                File.WriteAllText(FullPath, FileContects);
+
         }
         public abstract void CreateFileContents();
     }

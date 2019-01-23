@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,24 +49,32 @@ namespace A19_Ex1_Nir_0_Nir_0
             }
             else
             {
-                if (comboBoxTyps.Text == "Text File")
+                try
                 {
+                    if (comboBoxTyps.Text == "Text File")
+                    {
                         new SimpleTextFileGenertor(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
-                }
+                    }
 
-                if (comboBoxTyps.Text == "XML")
-                {
+                    if (comboBoxTyps.Text == "XML")
+                    {
                         new XmlFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
-                }
+                    }
 
-                if (comboBoxTyps.Text == "JSON")
-                {
+                    if (comboBoxTyps.Text == "JSON")
+                    {
                         new JsonFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
+                    }
+                    MessageBox.Show("File has been saved");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                catch (DirectoryNotFoundException exception)
+                {
+                    MessageBox.Show("Invalid path");
                 }
 
-                MessageBox.Show("File has been saved");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+
             }
         }
 

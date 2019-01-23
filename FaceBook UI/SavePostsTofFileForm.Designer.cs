@@ -113,6 +113,7 @@
             // buttonBrowse
             // 
             this.buttonBrowse.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.buttonBrowse.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBrowse.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonBrowse.Location = new System.Drawing.Point(287, 88);
@@ -141,6 +142,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SavePostsTofFileForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Save To File";
             this.Load += new System.EventHandler(this.SaveTofFileForm_Load);
             this.ResumeLayout(false);

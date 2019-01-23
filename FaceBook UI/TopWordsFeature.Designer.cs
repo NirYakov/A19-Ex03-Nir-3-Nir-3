@@ -124,7 +124,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(273, 47);
+            this.groupBox1.Size = new System.Drawing.Size(315, 47);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sort By";
@@ -180,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 421);
+            this.ClientSize = new System.Drawing.Size(335, 421);
             this.Controls.Add(this.buttonSaveToFile);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
@@ -190,6 +190,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxTopWords);
             this.Controls.Add(this.listboxTotalPosts);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
