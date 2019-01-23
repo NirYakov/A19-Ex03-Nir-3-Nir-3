@@ -60,7 +60,7 @@ namespace A19_Ex1_Nir_0_Nir_0
 
                 if (comboBoxTyps.Text == "JSON")
                 {
-                        new JSONFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
+                        new JsonFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
                 }
 
                 MessageBox.Show("File has been saved");

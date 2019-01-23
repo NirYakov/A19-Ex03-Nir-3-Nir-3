@@ -5,6 +5,7 @@ using FB_Logic;
 using FacebookWrapper.ObjectModel;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Timers;
 using A19_Ex1_Nir_0_Nir_0;
 
 namespace WinFormUI
@@ -38,9 +39,24 @@ namespace WinFormUI
             ThemeColor themeColorEvent = GenericSingletons.Singleton<ThemeColor>.Instance;
             themeColorEvent.ThemeChanged += themeColor_ChangedTheme;
             themeColor_ChangedTheme(themeColorEvent.BackColor, themeColorEvent.ForeColor);
+            System.Timers.Timer aTimer = new System.Timers.Timer(10000);
+            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            aTimer.Interval = 1000;
+            aTimer.Enabled = true;
 
         }
-
+        void OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            if (buttonSaveToFile.ForeColor == Color.DarkSlateGray)
+            {
+                buttonSaveToFile.Text = "Save To File";
+                buttonSaveToFile.ForeColor = Color.Azure;
+            }
+            else
+            {
+                buttonSaveToFile.ForeColor = Color.DarkSlateGray;
+            }
+        }
         private void themeColor_ChangedTheme(Color i_BackColor, Color i_ForeColor)
         {
             radioButtonRecent.ForeColor = i_ForeColor;
@@ -48,6 +64,8 @@ namespace WinFormUI
             radioButtonLikes.ForeColor = i_ForeColor;
             groupBox1.BackColor = i_BackColor;
             groupBox1.ForeColor = i_ForeColor;
+            buttonSaveToFile.BackColor = i_BackColor;
+            buttonSaveToFile.ForeColor = i_ForeColor;
         }
 
         private void ListBoxTopWords_SelectedIndexChanged(object sender, EventArgs e)

@@ -82,13 +82,14 @@
             // 
             // buttonCreateFile
             // 
-            this.buttonCreateFile.Location = new System.Drawing.Point(269, 135);
+            this.buttonCreateFile.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.buttonCreateFile.Location = new System.Drawing.Point(255, 130);
             this.buttonCreateFile.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCreateFile.Name = "buttonCreateFile";
             this.buttonCreateFile.Size = new System.Drawing.Size(93, 56);
             this.buttonCreateFile.TabIndex = 4;
             this.buttonCreateFile.Text = "Create File";
-            this.buttonCreateFile.UseVisualStyleBackColor = true;
+            this.buttonCreateFile.UseVisualStyleBackColor = false;
             this.buttonCreateFile.Click += new System.EventHandler(this.buttonCreateFile_Click);
             // 
             // label3
@@ -114,7 +115,7 @@
             this.buttonBrowse.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.buttonBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBrowse.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonBrowse.Location = new System.Drawing.Point(301, 88);
+            this.buttonBrowse.Location = new System.Drawing.Point(287, 88);
             this.buttonBrowse.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBrowse.Name = "buttonBrowse";
             this.buttonBrowse.Size = new System.Drawing.Size(61, 29);
@@ -128,7 +129,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(370, 197);
+            this.ClientSize = new System.Drawing.Size(360, 193);
             this.Controls.Add(this.buttonBrowse);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxPath);
