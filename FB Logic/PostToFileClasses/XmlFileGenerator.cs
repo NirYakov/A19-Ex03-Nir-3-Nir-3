@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using System.Xml.Serialization;
 using FacebookWrapper.ObjectModel;
 
 namespace FB_Logic 
@@ -16,7 +18,15 @@ namespace FB_Logic
 
         public override void CreateFileContents()
         {
-            throw new NotImplementedException();
+            XElement rootElement = new XElement("Posts-List", FileName);
+
+            foreach (Post item in PostsList)
+            {
+                XElement childElement = new XElement("Post", item.Message);
+                rootElement.Add(childElement);
+            }
+
+            FileContects = rootElement.ToString();
         }
     }
 

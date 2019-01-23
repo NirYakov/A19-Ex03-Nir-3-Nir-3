@@ -41,12 +41,12 @@ namespace A19_Ex1_Nir_0_Nir_0
         {
             if (comboBoxTyps.Text == "Text File")
             {
-                FileGenerator s = new SimpleTextFileGenertor(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
+                FileGenerator fileGenerator = new SimpleTextFileGenertor(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
             }
 
             if (comboBoxTyps.Text == "XML")
             {
-
+                FileGenerator fileGenerator = new XmlFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text); 
             }
 
             MessageBox.Show("File has been saved");
