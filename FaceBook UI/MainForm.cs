@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using FB_Logic;
 using FacebookWrapper.ObjectModel;
-using System.Threading;
 
 namespace WinFormUI
 {
@@ -107,7 +107,7 @@ namespace WinFormUI
             }
             else
             {
-                listBoxFriends.Invoke((new Action(() => userBindingSource.DataSource = allFriends)));
+                listBoxFriends.Invoke(new Action(() => userBindingSource.DataSource = allFriends));
             }
         }
 
@@ -158,7 +158,6 @@ namespace WinFormUI
 
             return PostsList;
         }
-
 
         private void listBoxFriends_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -223,7 +222,6 @@ Back later . :(");
                     listBoxFriends.Invoke((new Action(() => eventBindingSource.DataSource = allEvents)));
                 }
             }
-
             catch (Exception)
             {
                 ErrorMessage("Events");
@@ -323,7 +321,7 @@ Plase try later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         private void btnFeature1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            
+
             new UsersValue().Show();
 
             this.Show();
@@ -386,11 +384,10 @@ Plase try later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             groupBox1.Height += interval;
 
-            if (interval < 0 && btnDropDown.Bottom >= groupBox1.Bottom)//|| groupBox1.Bottom <= checkBoxInvertColors.Bottom + 10)
+            if (interval < 0 && btnDropDown.Bottom >= groupBox1.Bottom)
             {
                 timerDropDown.Stop();
                 btnDropDown.Text = "▼";
-                // MessageBox.Show($"{checkBoxInvertColors.Bottom}");
             }
             else
             {

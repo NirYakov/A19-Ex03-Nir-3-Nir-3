@@ -1,7 +1,7 @@
-﻿using System.Linq;
+﻿using System.Text.RegularExpressions;
+using System.Linq;
 using System.Collections.Generic;
 using FacebookWrapper.ObjectModel;
-using System.Text.RegularExpressions;
 using System;
 
 namespace FB_Logic

@@ -18,7 +18,6 @@ namespace WinFormUI
             ThemeColor themeColorEvent = GenericSingletons.Singleton<ThemeColor>.Instance;
             themeColorEvent.ThemeChanged += themeColor_ChangedTheme;
             themeColor_ChangedTheme(themeColorEvent.BackColor, themeColorEvent.ForeColor);
-
         }
 
         private void themeColor_ChangedTheme(Color i_BackColor, Color i_ForeColor)

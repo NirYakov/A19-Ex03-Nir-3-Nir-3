@@ -12,7 +12,7 @@ namespace FB_Logic
     {
         public SimpleTextFileGenertor(List<Post> i_PostsList, string i_FileName, string i_FilePath) : base(i_PostsList, String.Format("{0}.txt", i_FileName), i_FilePath)
         {
-            FileName =String.Format("{0}.txt",FileName);
+            FileName = String.Format("{0}.txt", FileName);
         }
 
         public override void CreateFileContents()

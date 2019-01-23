@@ -26,7 +26,6 @@ namespace A19_Ex1_Nir_0_Nir_0
         private void SaveTofFileForm_Load(object sender, EventArgs e)
         {
             textBoxFileTitle.Text = String.Format("My Posts {0}", DateTime.Now.ToString("yy-MM-dd"));
-            ;
         }
 
         private void buttonBrowse_Click(object sender, EventArgs e)
@@ -45,7 +44,6 @@ namespace A19_Ex1_Nir_0_Nir_0
                 textBoxFileTitle.Text == string.Empty)
             {
                 MessageBox.Show("Invalid values", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
             else
             {
@@ -65,22 +63,16 @@ namespace A19_Ex1_Nir_0_Nir_0
                     {
                         new JsonFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
                     }
+
                     MessageBox.Show("File has been saved");
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
-                catch (DirectoryNotFoundException exception)
+                catch (DirectoryNotFoundException )
                 {
                     MessageBox.Show("Invalid path");
                 }
-
-
             }
-        }
-
-        private void comboBoxTyps_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

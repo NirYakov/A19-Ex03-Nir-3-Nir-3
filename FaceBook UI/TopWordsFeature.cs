@@ -1,10 +1,10 @@
-﻿using System;
+﻿using System.Windows.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using FB_Logic;
-using FacebookWrapper.ObjectModel;
-using System.Windows.Forms;
 using System.Drawing;
+using FacebookWrapper.ObjectModel;
+using FB_Logic;
 using System.Timers;
 using A19_Ex1_Nir_0_Nir_0;
 
@@ -45,6 +45,7 @@ namespace WinFormUI
             aTimer.Enabled = true;
 
         }
+
         void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             if (buttonSaveToFile.ForeColor == Color.DarkSlateGray)
@@ -57,6 +58,7 @@ namespace WinFormUI
                 buttonSaveToFile.ForeColor = Color.DarkSlateGray;
             }
         }
+
         private void themeColor_ChangedTheme(Color i_BackColor, Color i_ForeColor)
         {
             radioButtonRecent.ForeColor = i_ForeColor;
@@ -94,7 +96,6 @@ namespace WinFormUI
 
         private void listboxTotalPosts_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
             if (listboxTotalPosts.SelectedItem != null)
             {
                 FormPostSummary formPostSummary = new FormPostSummary((Post)listboxTotalPosts.SelectedItem);
@@ -121,12 +122,11 @@ namespace WinFormUI
             }
 
             listboxTotalPosts.DataSource = r_PostAnalysis.SortByParameter(sortMethod, listToSort);
-            
         }
 
         private void buttonSaveToFile_Click(object sender, EventArgs e)
         {
-            SavePostsTofFileForm saveTofFileForm = new  SavePostsTofFileForm(listboxTotalPosts.Items.OfType<Post>().ToList());
+            SavePostsTofFileForm saveTofFileForm = new SavePostsTofFileForm(listboxTotalPosts.Items.OfType<Post>().ToList());
             saveTofFileForm.Show();
         }
     }

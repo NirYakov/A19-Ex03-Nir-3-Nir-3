@@ -47,6 +47,7 @@ namespace GenericSingletons
                             {
                                 throw new Exception(null, exception);
                             }
+
                             if (constructor == null || constructor.IsAssembly) // Also exclude internal constructors.
                             {
                                 throw new Exception(string.Format("A private or protected constructor is missing for '{0}'.", typeof(T).Name));

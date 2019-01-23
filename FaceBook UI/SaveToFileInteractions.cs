@@ -1,9 +1,9 @@
-﻿using FB_Logic;
-using System;
+﻿using System;
 using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using FB_Logic;
 
 namespace WinFormUI
 {
@@ -32,7 +32,6 @@ namespace WinFormUI
             ThemeColor themeColorEvent = GenericSingletons.Singleton<ThemeColor>.Instance;
             themeColorEvent.ThemeChanged += themeColor_ChangedTheme;
             themeColor_ChangedTheme(themeColorEvent.BackColor, themeColorEvent.ForeColor);
-
         }
 
         private void themeColor_ChangedTheme(Color i_BackColor, Color i_ForeColor)

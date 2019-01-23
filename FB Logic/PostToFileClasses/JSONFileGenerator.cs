@@ -10,15 +10,14 @@ namespace FB_Logic.PostToFileClasses
 {
     public class JsonFileGenerator : FileGenerator
     {
-
         public JsonFileGenerator(List<Post> i_PostsList, string i_FileName, string i_FilePath) : base(i_PostsList,
-            String.Format("{0}.json",i_FileName), i_FilePath)
+            String.Format("{0}.json", i_FileName), i_FilePath)
         {
         }
 
         public override void CreateFileContents()
         {
-           StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("{\"");
             sb.Append(FileName);
             sb.AppendLine("\":{");
@@ -28,10 +27,10 @@ namespace FB_Logic.PostToFileClasses
                 sb.Append(item.Message);
                 sb.AppendLine("\",");
             }
+        
             sb.AppendLine("     }\"");
             sb.AppendLine("}");
             FileContects = sb.ToString();
         }
     }
-
 }

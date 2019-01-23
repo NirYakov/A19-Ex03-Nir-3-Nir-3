@@ -16,9 +16,8 @@ namespace FB_Logic
         public string FullPath { get; set; }
         public string FileContects { get; set; }
 
-        public FileGenerator(List<Post> i_PostsList,String i_FileName, String i_FilePath)
+        public FileGenerator(List<Post> i_PostsList, String i_FileName, String i_FilePath)
         {
-
             PostsList = i_PostsList;
             FileName = i_FileName;
             FilePath = i_FilePath;
@@ -34,10 +33,9 @@ namespace FB_Logic
 
         private void populateContectToFile()
         {
-
-                File.WriteAllText(FullPath, FileContects);
-
+            File.WriteAllText(FullPath, FileContects);
         }
+
         public abstract void CreateFileContents();
     }
 }

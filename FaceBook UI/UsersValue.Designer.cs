@@ -355,7 +355,6 @@
             this.radioButtonShowSort.TabStop = true;
             this.radioButtonShowSort.Text = "Show";
             this.radioButtonShowSort.UseVisualStyleBackColor = true;
-            this.radioButtonShowSort.CheckedChanged += new System.EventHandler(this.radioButtonShowSort_CheckedChanged);
             // 
             // buttonSaveToFile
             // 

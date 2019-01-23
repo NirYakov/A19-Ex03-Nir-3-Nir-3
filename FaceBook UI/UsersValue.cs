@@ -491,10 +491,5 @@ Try Later");
                 return i_X.MyUserAnalysis.CompareTo(i_Y.MyUserAnalysis);
             }
         }
-
-        private void radioButtonShowSort_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
