@@ -49,21 +49,21 @@ namespace A19_Ex1_Nir_0_Nir_0
             {
                 try
                 {
+                    FileGenerator generator;               
                     if (comboBoxTyps.Text == "Text File")
                     {
-                        new SimpleTextFileGenertor(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
+                        generator = new SimpleTextFileGenertor(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
                     }
 
-                    if (comboBoxTyps.Text == "XML")
+                    else if (comboBoxTyps.Text == "XML")
                     {
-                        new XmlFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
+                        generator = new XmlFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
                     }
-
-                    if (comboBoxTyps.Text == "JSON")
+                    else
                     {
-                        new JsonFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
+                        generator = new JsonFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
                     }
-
+                    generator.CreateFile();
                     MessageBox.Show("File has been saved");
                     this.DialogResult = DialogResult.OK;
                     this.Close();

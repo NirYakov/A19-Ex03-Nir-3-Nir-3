@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -21,9 +22,6 @@ namespace FB_Logic
             PostsList = i_PostsList;
             FileName = i_FileName;
             FilePath = i_FilePath;
-            SetFullPath();
-            CreateFileContents();
-            populateContectToFile();
         }
 
         private void SetFullPath()
@@ -31,11 +29,17 @@ namespace FB_Logic
             FullPath = Path.Combine(FilePath, FileName);
         }
 
-        private void populateContectToFile()
+        private void PopulateContectToFile()
         {
             File.WriteAllText(FullPath, FileContects);
         }
 
-        public abstract void CreateFileContents();
+        public void CreateFile()
+        {
+            SetFullPath();
+            SetFileContents();
+            PopulateContectToFile();
+        }
+        public abstract void SetFileContents();
     }
 }

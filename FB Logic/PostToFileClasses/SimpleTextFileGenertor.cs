@@ -12,15 +12,14 @@ namespace FB_Logic
     {
         public SimpleTextFileGenertor(List<Post> i_PostsList, string i_FileName, string i_FilePath) : base(i_PostsList, String.Format("{0}.txt", i_FileName), i_FilePath)
         {
-            FileName = String.Format("{0}.txt", FileName);
         }
 
-        public override void CreateFileContents()
+        public override void SetFileContents()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(FileName);
             int counter = 1;
-            foreach (var post in PostsList)
+            foreach (Post  post in PostsList)
             {
                 sb.Append(counter++);
                 sb.Append(") ");

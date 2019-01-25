@@ -15,7 +15,7 @@ namespace FB_Logic
         {
         }
 
-        public override void CreateFileContents()
+        public override void SetFileContents()
         {
             XElement rootElement = new XElement("Posts-List", FileName);
 
