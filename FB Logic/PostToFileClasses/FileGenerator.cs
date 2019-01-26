@@ -24,21 +24,21 @@ namespace FB_Logic
             FilePath = i_FilePath;
         }
 
-        private void SetFullPath()
+        private void setFullPath()
         {
             FullPath = Path.Combine(FilePath, FileName);
         }
 
-        private void PopulateContectToFile()
+        private void populateContectToFile()
         {
             File.WriteAllText(FullPath, FileContects);
         }
 
         public void CreateFile()
         {
-            SetFullPath();
+            setFullPath();
             SetFileContents();
-            PopulateContectToFile();
+            populateContectToFile();
         }
         public abstract void SetFileContents();
     }
