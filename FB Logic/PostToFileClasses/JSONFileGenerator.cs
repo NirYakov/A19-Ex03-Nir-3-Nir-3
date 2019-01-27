@@ -10,8 +10,8 @@ namespace FB_Logic.PostToFileClasses
 {
     public class JsonFileGenerator : FileGenerator
     {
-        public JsonFileGenerator(List<Post> i_PostsList, string i_FileName, string i_FilePath) : base(i_PostsList,
-            String.Format("{0}.json", i_FileName), i_FilePath)
+        public JsonFileGenerator(List<Post> i_PostsList, string i_FileName, string iFolderPath) : base(i_PostsList,
+            String.Format("{0}.json", i_FileName), iFolderPath)
         {
         }
 

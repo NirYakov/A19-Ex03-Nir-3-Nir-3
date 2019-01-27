@@ -13,32 +13,32 @@ namespace FB_Logic
     {
         public List<Post> PostsList { get; set; }
         public string FileName { get; set; }
-        public string FilePath { get; set; }
+        public string FolderPath { get; set; }
         public string FullPath { get; set; }
         public string FileContects { get; set; }
 
-        public FileGenerator(List<Post> i_PostsList, String i_FileName, String i_FilePath)
+        public FileGenerator(List<Post> i_PostsList, String i_FileName, String iFolderPath)
         {
             PostsList = i_PostsList;
             FileName = i_FileName;
-            FilePath = i_FilePath;
+            FolderPath = iFolderPath;
+            setFullPath();
         }
 
         private void setFullPath()
         {
-            FullPath = Path.Combine(FilePath, FileName);
+            FullPath = Path.Combine(FolderPath, FileName);
         }
 
-        private void populateContectToFile()
+        private void populateContentToFile()
         {
             File.WriteAllText(FullPath, FileContects);
         }
 
         public void CreateFile()
         {
-            setFullPath();
             SetFileContents();
-            populateContectToFile();
+            populateContentToFile();
         }
         public abstract void SetFileContents();
     }

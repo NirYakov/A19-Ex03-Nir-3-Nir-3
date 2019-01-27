@@ -49,7 +49,8 @@ namespace A19_Ex1_Nir_0_Nir_0
             {
                 try
                 {
-                    FileGenerator generator;               
+                    FileGenerator generator;
+                    ;
                     if (comboBoxTyps.Text == "Text File")
                     {
                         generator = new SimpleTextFileGenertor(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
