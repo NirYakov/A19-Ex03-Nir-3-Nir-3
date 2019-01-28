@@ -1,6 +1,6 @@
 ﻿namespace WinFormUI
 {
-    partial class FormPostSummary
+    partial class PostSummaryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -125,7 +125,7 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(373, 31);
             this.dateTimePicker1.TabIndex = 8;
             // 
-            // FormPostSummary
+            // PostSummaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -140,7 +140,7 @@
             this.Controls.Add(this.lableStatus);
             this.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormPostSummary";
+            this.Name = "PostSummaryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormPostSummary";
             this.Load += new System.EventHandler(this.FormPostSummary_Load);

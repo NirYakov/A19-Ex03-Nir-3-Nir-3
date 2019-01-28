@@ -14,12 +14,12 @@ namespace FB_Logic
         {
         }
 
-        public override void SetFileContents()
+        protected override void SetFileContents()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(FileName);
             int counter = 1;
-            foreach (Post  post in PostsList)
+            foreach (Post post in PostsList)
             {
                 sb.Append(counter++);
                 sb.Append(") ");

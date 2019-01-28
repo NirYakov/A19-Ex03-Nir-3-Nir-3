@@ -40,6 +40,7 @@ namespace FB_Logic
             SetFileContents();
             populateContentToFile();
         }
-        public abstract void SetFileContents();
+
+        protected abstract void SetFileContents();
     }
 }

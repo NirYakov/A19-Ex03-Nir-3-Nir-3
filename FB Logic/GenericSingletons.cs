@@ -32,6 +32,7 @@ namespace GenericSingletons
             get
             {
                 if (s_Instance == null)
+                {
                     lock (s_LockObj)
                     {
                         if (s_Instance == null)
@@ -56,6 +57,7 @@ namespace GenericSingletons
                             s_Instance = (T)constructor.Invoke(null);
                         }
                     }
+                }
 
                 return s_Instance;
             }

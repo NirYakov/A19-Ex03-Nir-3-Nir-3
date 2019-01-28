@@ -43,10 +43,9 @@ namespace WinFormUI
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             aTimer.Interval = 1000;
             aTimer.Enabled = true;
-
         }
 
-        void OnTimedEvent(object source, ElapsedEventArgs e)
+        public void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             if (buttonSaveToFile.ForeColor == Color.DarkSlateGray)
             {
@@ -98,7 +97,7 @@ namespace WinFormUI
         {
             if (listboxTotalPosts.SelectedItem != null)
             {
-                FormPostSummary formPostSummary = new FormPostSummary((Post)listboxTotalPosts.SelectedItem);
+                PostSummaryForm formPostSummary = new PostSummaryForm((Post)listboxTotalPosts.SelectedItem);
                 formPostSummary.ShowDialog();
             }
         }

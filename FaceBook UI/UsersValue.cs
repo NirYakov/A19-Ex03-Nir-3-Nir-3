@@ -108,7 +108,7 @@ by given fields , and sort the best to top.";
                 item.TopPanel.BackColor = i_BackColor;
                 item.LabelText.ForeColor = i_ForeColor;
             }
-                
+
             foreach (PictureTopBar item in flowLayoutPanelPickedUserPictures.Controls)
             {
                 item.TopPanel.BackColor = i_BackColor;
@@ -183,16 +183,14 @@ by given fields , and sort the best to top.";
             labelTheName.Text = i_UserAnalysis.UserIn.Name;
             buttonFetchAlbums.Text = string.Format(k_BringAlbumsString, labelTheName.Text);
             buttonSaveToFile.Enabled = false;
-            pictureBoxLaodedUser.LoadAsync(i_UserAnalysis.UserIn.PictureSqaureURL);
-
             labelTheFirendsCount.Text = i_UserAnalysis.UserIn.Friends.Count.ToString();
-            labelTheTagged.Text = i_UserAnalysis.UserIn.PhotosTaggedIn.Count.ToString();
-
-            labelBDay.Text = i_UserAnalysis.UserIn.Birthday;
             m_LoadedUserAnalysis = i_UserAnalysis;
             m_PicutresManager.MyAlbums = i_UserAnalysis.UserIn.Albums;
             const bool showAlbumList = true, showPictureList = true;
             clearImagesAlbumAndPicturesContainers(showAlbumList, !showPictureList);
+            pictureBoxLaodedUser.LoadAsync(i_UserAnalysis.UserIn.PictureSqaureURL);
+            labelBDay.Text = i_UserAnalysis.UserIn.Birthday;
+            labelTheTagged.Text = i_UserAnalysis.UserIn.PhotosTaggedIn.Count.ToString();
         }
 
         private void buttonInteraction_Click(object sender, EventArgs e)

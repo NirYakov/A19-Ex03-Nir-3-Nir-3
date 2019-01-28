@@ -7,11 +7,11 @@ using FB_Logic;
 
 namespace WinFormUI
 {
-    public partial class FormPostSummary : Form
+    public partial class PostSummaryForm : Form
     {
         public Post ThePost { get; set; }
 
-        public FormPostSummary(Post i_ThePost)
+        public PostSummaryForm(Post i_ThePost)
         {
             ThePost = i_ThePost;
             InitializeComponent();

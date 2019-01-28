@@ -69,11 +69,11 @@
     <Compile Include="TopWordsFeature.Designer.cs">
       <DependentUpon>TopWordsFeature.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPostSummary.cs">
+    <Compile Include="PostSummaryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPostSummary.Designer.cs">
-      <DependentUpon>FormPostSummary.cs</DependentUpon>
+    <Compile Include="PostSummaryForm.Designer.cs">
+      <DependentUpon>PostSummaryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -107,8 +107,8 @@
     <EmbeddedResource Include="TopWordsFeature.resx">
       <DependentUpon>TopWordsFeature.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPostSummary.resx">
-      <DependentUpon>FormPostSummary.cs</DependentUpon>
+    <EmbeddedResource Include="PostSummaryForm.resx">
+      <DependentUpon>PostSummaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

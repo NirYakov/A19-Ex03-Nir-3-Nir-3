@@ -50,12 +50,10 @@ namespace A19_Ex1_Nir_0_Nir_0
                 try
                 {
                     FileGenerator generator;
-                    ;
                     if (comboBoxTyps.Text == "Text File")
                     {
                         generator = new SimpleTextFileGenertor(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
                     }
-
                     else if (comboBoxTyps.Text == "XML")
                     {
                         generator = new XmlFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
@@ -64,6 +62,7 @@ namespace A19_Ex1_Nir_0_Nir_0
                     {
                         generator = new JsonFileGenerator(r_ListOfPosts, textBoxFileTitle.Text, textBoxPath.Text);
                     }
+
                     generator.CreateFile();
                     MessageBox.Show("File has been saved");
                     this.DialogResult = DialogResult.OK;

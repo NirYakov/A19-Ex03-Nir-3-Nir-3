@@ -15,7 +15,7 @@ namespace FB_Logic.PostToFileClasses
         {
         }
 
-        public override void SetFileContents()
+        protected override void SetFileContents()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("{\"");
